@@ -9,12 +9,18 @@ export default class Draw {
         this.currY = 0
         this.dot_flag = false
         this.x = "black"
-        this.y = 2
+        this.y = 6
         this.socket = socket
     }
 
     changeColor (color) {
-        this.x = color
+        if (color === 'white') {
+            this.y = 16
+            this.x = 'white'
+        } else {
+            this.y = 6
+            this.x = color
+        }
     }
  
     draw () {
@@ -24,8 +30,8 @@ export default class Draw {
         this.ctx.strokeStyle = this.x;
         this.ctx.lineWidth = this.y;
         this.ctx.stroke();
-        this.emitDraw()
         this.ctx.closePath();
+        this.emitDraw()
     }
 
     emitDraw () {
@@ -67,13 +73,13 @@ export default class Draw {
         this.flag = true;
         this.dot_flag = true;
 
-        if (this.dot_flag) {
-            this.ctx.beginPath();
-            this.ctx.fillStyle = this.x;
-            this.ctx.fillRect(this.currX, this.currY, 2, 2);
-            this.ctx.closePath();
-            this.emitDraw()
-            this.dot_flag = false;
+        if (this.dot_flag) {  
+            // this.ctx.beginPath();
+            // this.ctx.fillStyle = this.x;
+            // this.ctx.fillRect(this.currX, this.currY, );
+            // this.ctx.closePath();
+            // this.emitDraw()
+            // this.dot_flag = false;
         }
     }
     

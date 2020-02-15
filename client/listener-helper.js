@@ -24,11 +24,11 @@ export default class ListenerHelper {
 
     registerDrawEvent () {
         const objEvents = {
-            'mousemove': (e) => { this.throttle(this.move(e), 10) },
+            'mousemove': (e) => { this.move(e) },
             'mousedown': (e) => { this.down(e) },
             'mouseup': () => { this.out() },
             'mouseout': () => { this.out() },
-            'touchmove': (e) => { this.throttle(this.move(e), 10) },
+            'touchmove': (e) => { this.move(e) },
             'touchstart': (e) => { this.down(e) },
             'touchend': () => { this.out() },
             'touchcancel': () => { this.out() }
