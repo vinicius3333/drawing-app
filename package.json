@@ -1,0 +1,16 @@
+{
+  "name": "drawing-app",
+  "version": "1.0.0",
+  "description": "Site para desenhar conectado com websockets",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Vinicius",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}
