@@ -9,7 +9,7 @@ export default class Draw {
         this.currY = 0
         this.dot_flag = false
         this.x = "black"
-        this.y = 6
+        this.y = 3
         this.socket = socket
     }
 
@@ -18,7 +18,7 @@ export default class Draw {
             this.y = 16
             this.x = 'white'
         } else {
-            this.y = 6
+            this.y = 3
             this.x = color
         }
     }
@@ -74,12 +74,12 @@ export default class Draw {
         this.dot_flag = true;
 
         if (this.dot_flag) {  
-            // this.ctx.beginPath();
-            // this.ctx.fillStyle = this.x;
-            // this.ctx.fillRect(this.currX, this.currY, );
-            // this.ctx.closePath();
-            // this.emitDraw()
-            // this.dot_flag = false;
+            this.ctx.beginPath();
+            this.ctx.fillStyle = this.x;
+            this.ctx.fillRect(this.currX, this.currY, 3, 3);
+            this.ctx.closePath();
+            this.emitDraw()
+            this.dot_flag = false;
         }
     }
     
